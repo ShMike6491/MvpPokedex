@@ -1,4 +1,4 @@
-package my.mvppokemon.storage
+package my.mvppokemon.repository.models
 
 data class Pokemon(
     val name: String,

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import my.mvppokemon.R
 import my.mvppokemon.databinding.ItemPokemonCardBinding
-import my.mvppokemon.storage.Pokemon
+import my.mvppokemon.repository.models.Pokemon
 
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
     private var pokemonList: List<Pokemon> = emptyList()

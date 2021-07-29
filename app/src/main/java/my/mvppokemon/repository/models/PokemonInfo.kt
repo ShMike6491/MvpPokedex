@@ -1,4 +1,4 @@
-package my.mvppokemon.storage
+package my.mvppokemon.repository.models
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

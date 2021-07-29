@@ -1,4 +1,7 @@
-package my.mvppokemon.storage
+package my.mvppokemon.repository
+
+import my.mvppokemon.repository.models.Pokemon
+import my.mvppokemon.repository.models.PokemonInfo
 
 fun getPokemons(): List<Pokemon> = listOf(
     Pokemon("bulbasaur", "https://pokeapi.co/api/v2/pokemon/1/"),

@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import my.mvppokemon.R
 import my.mvppokemon.databinding.FragmentHomeBinding
-import my.mvppokemon.storage.getPokemons
+import my.mvppokemon.repository.getPokemons
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
     private var binding: FragmentHomeBinding? = null
