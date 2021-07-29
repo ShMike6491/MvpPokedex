@@ -48,4 +48,5 @@ ext {
     converterGson = '2.7.1'
     retrofitAdapterRxJava = '2.9.0'
     okHttpLoggingInterceptor = '4.9.0'
+    glideVersion = '4.12.0'
 }
