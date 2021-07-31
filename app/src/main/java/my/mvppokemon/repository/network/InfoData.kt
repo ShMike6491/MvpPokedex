@@ -2,6 +2,7 @@ package my.mvppokemon.repository.network
 
 import com.google.gson.annotations.SerializedName
 import my.mvppokemon.repository.models.PokemonInfo
+import my.mvppokemon.repository.persistence.PokemonEntity
 
 data class InfoData(
     @field:SerializedName("id") val id: Int,
@@ -20,6 +21,24 @@ data class InfoData(
     @field:SerializedName("moves") val moves: List<FieldMoves>,
 ) {
     fun convertToDomain(): PokemonInfo = PokemonInfo(
+        id = id,
+        name = name,
+        species = species.name,
+        height = height,
+        weight = weight,
+        abilities = abilities.map { it.ability.name },
+        types = types.map { it.type.name },
+
+        hp = extractStatistics("hp"),
+        attack = extractStatistics("attack"),
+        defense = extractStatistics("defense"),
+        spAttack = extractStatistics("special-attack"),
+        spDefense = extractStatistics("special-defense"),
+        speed = extractStatistics("speed")
+    )
+    fun convertToDatabase(): PokemonEntity = PokemonEntity(
+        containsInfo = true,
+
         id = id,
         name = name,
         species = species.name,

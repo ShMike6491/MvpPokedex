@@ -4,12 +4,12 @@ import my.mvppokemon.repository.models.Pokemon
 import my.mvppokemon.repository.models.PokemonInfo
 
 fun getPokemons(): List<Pokemon> = listOf(
-    Pokemon("bulbasaur", "https://pokeapi.co/api/v2/pokemon/1/"),
-    Pokemon("ivysaur", "https://pokeapi.co/api/v2/pokemon/2/"),
-    Pokemon("venusaur", "https://pokeapi.co/api/v2/pokemon/3/"),
-    Pokemon("charmander", "https://pokeapi.co/api/v2/pokemon/4/"),
-    Pokemon("charmeleon", "https://pokeapi.co/api/v2/pokemon/5/"),
-    Pokemon("charizard", "https://pokeapi.co/api/v2/pokemon/6/"),
+    Pokemon("bulbasaur", 1),
+    Pokemon("ivysaur", 2),
+    Pokemon("venusaur", 3),
+    Pokemon("charmander", 4),
+    Pokemon("charmeleon", 5),
+    Pokemon("charizard", 6),
 )
 
 fun getInfo(): PokemonInfo = PokemonInfo(
