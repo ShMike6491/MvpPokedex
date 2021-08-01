@@ -7,10 +7,11 @@ import com.bumptech.glide.Glide
 import com.google.android.material.chip.Chip
 import my.mvppokemon.R
 import my.mvppokemon.databinding.FragmentDetailsBinding
+import my.mvppokemon.navigation.INavigationUpListener
 import my.mvppokemon.repository.models.PokemonInfo
 import my.mvppokemon.repository.getInfo
 
-class DetailsFragment : Fragment(R.layout.fragment_details) {
+class DetailsFragment : Fragment(R.layout.fragment_details), INavigationUpListener {
     private var binding: FragmentDetailsBinding? = null
     private val b get() = binding!!
 
@@ -57,5 +58,9 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             args.putParcelable(DETAILS_TAG, info)
             return DetailsFragment().apply { arguments = args}
         }
+    }
+
+    override fun backPressed(): Boolean {
+        TODO("Not yet implemented")
     }
 }
