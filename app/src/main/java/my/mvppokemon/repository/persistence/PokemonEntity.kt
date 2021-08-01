@@ -2,6 +2,9 @@ package my.mvppokemon.repository.persistence
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverter
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import my.mvppokemon.repository.models.Pokemon
 import my.mvppokemon.repository.models.PokemonInfo
 
@@ -46,3 +49,28 @@ data class PokemonEntity(
  * Extension function to convert database layer to domain data
  */
 fun List<PokemonEntity>.convertToDomainPokemon(): List<Pokemon> = map { it.convertToDomainPokemon() }
+
+/**
+ * Data type conversion to save Json to the database
+ */
+class FieldConverter {
+    @TypeConverter
+    fun readFromField(data: List<String?>?): String? {
+        if (data == null) {
+            return null
+        }
+        val gson = Gson()
+        val type = object : TypeToken<List<String?>?>() {}.type
+        return gson.toJson(data, type)
+    }
+
+    @TypeConverter
+    fun writeToField(dataString: String?): List<String>? {
+        if (dataString == null) {
+            return null
+        }
+        val gson = Gson()
+        val type = object : TypeToken<List<String?>?>() {}.type
+        return gson.fromJson<List<String>>(dataString, type)
+    }
+}

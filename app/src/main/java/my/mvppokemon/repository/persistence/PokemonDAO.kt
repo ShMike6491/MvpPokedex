@@ -2,6 +2,7 @@ package my.mvppokemon.repository.persistence
 
 import androidx.room.*
 
+@Dao
 interface PokemonDAO {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(pokemon: PokemonEntity)

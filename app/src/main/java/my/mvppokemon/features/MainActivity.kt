@@ -9,8 +9,8 @@ import my.mvppokemon.navigation.INavigationUpListener
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
-    private val navigator = AppNavigator(this, R.id.container)
-    private val navHolder = PokemonApp.INSTANCE.navigatorHolder
+    //private val navigator = AppNavigator(this, R.id.container)
+    //private val navHolder = PokemonApp.INSTANCE.navigatorHolder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,12 +18,12 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onResumeFragments() {
         super.onResumeFragments()
-        navHolder.setNavigator(navigator)
+        //navHolder.setNavigator(navigator)
     }
 
     override fun onPause() {
         super.onPause()
-        navHolder.removeNavigator()
+        //navHolder.removeNavigator()
     }
 
     override fun onBackPressed() {
