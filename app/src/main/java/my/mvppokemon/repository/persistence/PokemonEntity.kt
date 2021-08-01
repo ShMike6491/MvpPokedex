@@ -41,3 +41,8 @@ data class PokemonEntity(
         speed = speed ?: 0
     )
 }
+
+/**
+ * Extension function to convert database layer to domain data
+ */
+fun List<PokemonEntity>.convertToDomainPokemon(): List<Pokemon> = map { it.convertToDomainPokemon() }
