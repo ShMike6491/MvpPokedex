@@ -1,29 +1,37 @@
 package my.mvppokemon.features
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.androidx.AppNavigator
+import moxy.MvpAppCompatActivity
+import moxy.ktx.moxyPresenter
 import my.mvppokemon.PokemonApp
 import my.mvppokemon.R
 import my.mvppokemon.navigation.INavigationUpListener
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
-
-    //private val navigator = AppNavigator(this, R.id.container)
-    //private val navHolder = PokemonApp.INSTANCE.navigatorHolder
+class MainActivity : MvpAppCompatActivity(R.layout.activity_main), MainView {
+    @Inject lateinit var navHolder: NavigatorHolder
+    private val navigator = AppNavigator(this, R.id.container)
+    private val presenter by moxyPresenter {
+        MainPresenter().apply {
+            PokemonApp.INSTANCE.appComponent.inject(this)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        PokemonApp.INSTANCE.appComponent.inject(this)
         super.onCreate(savedInstanceState)
     }
 
     override fun onResumeFragments() {
         super.onResumeFragments()
-        //navHolder.setNavigator(navigator)
+        navHolder.setNavigator(navigator)
     }
 
     override fun onPause() {
         super.onPause()
-        //navHolder.removeNavigator()
+        navHolder.removeNavigator()
     }
 
     override fun onBackPressed() {
@@ -32,6 +40,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 return
             }
         }
-        //TODO Let presented handle back pressed func
+        presenter.backClicked()
     }
 }

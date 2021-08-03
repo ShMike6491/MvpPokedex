@@ -14,7 +14,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Pokemon" />
+        android:text="Pokemon" />
 
     <TextView
         android:id="@+id/tv_number"
@@ -25,7 +25,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_name"
-        tools:text="#000" />
+        android:text="#000" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chips"
@@ -157,7 +157,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:max="100"
-        android:progress="45"
+        android:progress="0"
         app:layout_constraintBottom_toBottomOf="@+id/hp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/hp"
@@ -180,7 +180,7 @@
         android:layout_height="18dp"
         android:layout_marginEnd="32dp"
         android:max="100"
-        android:progress="72"
+        android:progress="0"
         app:layout_constraintBottom_toBottomOf="@+id/attack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/progress_hp"
@@ -203,7 +203,7 @@
         android:layout_height="18dp"
         android:layout_marginEnd="32dp"
         android:max="100"
-        android:progress="15"
+        android:progress="0"
         app:layout_constraintBottom_toBottomOf="@+id/defence"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/progress_hp"
@@ -226,7 +226,7 @@
         android:layout_height="18dp"
         android:layout_marginEnd="32dp"
         android:max="100"
-        android:progress="15"
+        android:progress="0"
         app:layout_constraintBottom_toBottomOf="@+id/speed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/progress_hp"
