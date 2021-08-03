@@ -9,7 +9,7 @@ This is a small network client application based on MVP architecture.
 
 ## Project Structure
 <p align="center">
-<imgsrc="https://drive.google.com/file/d/12KT_-bGHzJWDQ18MR4_7VTFerb-XRNlH/view" alt="App File Structure">
+<imgsrc="https://drive.google.com/uc?export=view&id=12KT_-bGHzJWDQ18MR4_7VTFerb-XRNlH" alt="App File Structure">
 </p>
 
 ## Dependencies
